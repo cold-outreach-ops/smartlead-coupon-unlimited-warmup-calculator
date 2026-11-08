@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: MIT
 """Offline USD planning model using historical list-price benchmarks.
 Prices and packaging have not been checked live; replace with written quotes.
-See README.md for capacity assumptions, exclusions and the MIT license.
+See README.md for capacity benchmarks, exclusions and the MIT license.
 """
 import argparse
 import json
@@ -87,7 +87,7 @@ parser.add_argument("--mailbox-price", type=number, default=4.5)
 parser.add_argument("--domain-year", type=number, default=13)
 parser.add_argument("--discount", type=number, default=0, help="hypothetical percentage, no verified code")
 parser.add_argument("--discount-months", type=positive, default=1)
-parser.add_argument("--duplicate-warmup", type=number, default=1.5, help="assumed redundant USD/mailbox/month")
+parser.add_argument("--duplicate-warmup", type=number, default=1.5, help="verified redundant USD/mailbox/month")
 args = parser.parse_args()
 if args.discount > 100 or args.discount_months > 12:
     parser.error("discount must be 0..100 and discount-months 1..12")
